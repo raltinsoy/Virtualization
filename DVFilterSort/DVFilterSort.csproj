@@ -57,8 +57,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Converter.cs" />
-    <Compile Include="DataGridHelper.cs" />
+    <Compile Include="Customer.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -68,16 +67,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CustomerProvider.cs" />
-    <Compile Include="Customers.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Customers.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="CustomersDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CustomersDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -98,29 +87,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="app.config" />
-    <None Include="Customers.dbml.layout">
-      <DependentUpon>Customers.dbml</DependentUpon>
-    </None>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Customers.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>Customers.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CustomersDataSet.xsc">
-      <DependentUpon>CustomersDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CustomersDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CustomersDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CustomersDataSet.xss">
-      <DependentUpon>CustomersDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -131,10 +101,6 @@
     <ProjectReference Include="..\DataVirtualization\DataVirtualization.csproj">
       <Project>{F0551328-4699-43B6-949E-9BDABF89FC1E}</Project>
       <Name>DataVirtualization</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ReusableControls\ReusableControls.csproj">
-      <Project>{37EC527A-D370-4643-A4A5-F585D18244D1}</Project>
-      <Name>ReusableControls</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
