@@ -6,6 +6,7 @@
     <Grid VerticalAlignment="Stretch" Margin="30">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <ComboBox Grid.Row="0"
@@ -13,12 +14,22 @@
                   SelectedIndex="0"
                   Margin="0,15,0,0"
                   DisplayMemberPath="Data.Name"
-                  ItemsSource="{Binding}">
+                  ItemsSource="{Binding customerList}"
+                  SelectedItem="{Binding Selected}">
             <ComboBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel VirtualizingStackPanel.IsVirtualizing="True" VirtualizingStackPanel.VirtualizationMode="Recycling"/>
                 </ItemsPanelTemplate>
             </ComboBox.ItemsPanel>
         </ComboBox>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="selectedIndexTxt" Grid.Column="0" Width="100" Margin="5"/>
+            <Button Grid.Column="1" Margin="5" Content="Select" Click="Button_Click"/>
+        </Grid>
     </Grid>
 </Window>

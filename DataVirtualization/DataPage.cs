@@ -42,7 +42,7 @@ namespace DataVirtualization
             while (i < newItems.Count)
             {
                 index++;
-                Items.Add(new DataWrapper<T>(index) {Data = newItems[i]});
+                Items.Add(new DataWrapper<T>(index) { Data = newItems[i] });
                 i++;
             }
 

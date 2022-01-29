@@ -482,6 +482,8 @@ namespace DataVirtualization
             }
         }
 
+        int counter;
+
         /// <summary>
         /// Makes a request for the specified page, creating the necessary slots in the dictionary,
         /// and updating the page touch time.
@@ -497,6 +499,13 @@ namespace DataVirtualization
                 _pages.Add(pageIndex, page);
                 Trace.WriteLine("Added page: " + pageIndex);
                 LoadPage(pageIndex, pageLength);
+
+                if (counter++ > 20)
+                {
+                    counter = 0;
+                    GC.Collect();
+                    Trace.WriteLine("Garbage Collected");
+                }
             }
             else
             {
